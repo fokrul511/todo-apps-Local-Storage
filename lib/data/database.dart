@@ -9,8 +9,9 @@ class ToDoDataBase {
   // run this method if this is the 1st time ever opening this app
   void createInitialData() {
     toDoList = [
-      ["Make Tutorial", false],
+      ["Flutter Developer", false],
       ["Do Exercise", false],
+
     ];
   }
 

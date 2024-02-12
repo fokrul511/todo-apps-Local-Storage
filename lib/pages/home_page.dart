@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:todo_apps_store_localdata/team/team.dart';
 import '../data/database.dart';
 import '../util/dialog_box.dart';
 import '../util/todo_tile.dart';
@@ -76,13 +77,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(
-        title: Text('TO DO'),
+        actions: [IconButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Team(),));
+        }, icon: Icon(Icons.info_outline))],
+        title: const Text('TO DO'),
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: createNewTask,
-        icon: Icon(Icons.add),
-        label: Text('Add'),
+        icon: const Icon(Icons.add),
+        label: const Text('Add'),
       ),
       body: ListView.builder(
         itemCount: db.toDoList.length,
